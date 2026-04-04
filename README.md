@@ -1,4 +1,4 @@
-### Linux Fundamentals
+### Linux Commands
 -------------------------
 pwd - print where directory
 
