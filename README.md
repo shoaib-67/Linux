@@ -20,4 +20,15 @@ cat - to add content in files
 
 cat >> - to upldate content
 
+cp - copy the content of the files Ex- cp source.txt destination.txt
+
+cp - can rename files Ex- cp alien.txt backup.txt
+
+
+
+
+
+
+
+
 
