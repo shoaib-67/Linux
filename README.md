@@ -36,7 +36,16 @@ A comprehensive cheat sheet covering essential Linux commands for developers —
     ^^^      → group  (read, no write, execute)
        ^^^   → others (read, no write, no execute)
 ```
-
+$ ls -l
+-rwxr-xr-- 1 alice developers 4096 Apr 14 10:22 script.sh
+│ │││││││  │  │      │         │    │              └─ filename
+│ │││││││  │  │      │         │    └─ last modified date
+│ │││││││  │  │      │         └─ file size (bytes)
+│ │││││││  │  │      └─ group owner
+│ │││││││  │  └─ user owner
+│ │││││││  └─ number of hard links
+│ └──────── permissions (owner / group / others)
+└─ file type (- file, d directory, l symlink)
 ### Numeric Permission Values
 
 | Value | Permission |
@@ -142,7 +151,6 @@ find . -name "*.sh" | xargs chmod +x
 ```bash
 locate nginx.conf
 locate -i readme.md               # case-insensitive
-updatedb && locate new_file       # update database then search
 ```
 
 ### `sed` — Stream Editor
@@ -157,15 +165,6 @@ sed 's/^/  /' file.txt                    # indent every line
 
 # Multiple operations
 sed -e 's/foo/bar/g' -e 's/baz/qux/g' file.txt
-```
-
-### `tar` — Archive & Compress
-
-```bash
-tar -czvf archive.tar.gz ./dir            # create compressed archive
-tar -xzvf archive.tar.gz                  # extract
-tar -tvf archive.tar.gz                   # list contents without extracting
-tar -xzvf archive.tar.gz -C /opt/         # extract to specific directory
 ```
 
 ## 📚 Resources
