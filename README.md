@@ -38,14 +38,19 @@ A comprehensive cheat sheet covering essential Linux commands for developers —
 ```
 $ ls -l
 -rwxr-xr-- 1 alice developers 4096 Apr 14 10:22 script.sh
-│ │││││││  │  │      │         │    │              └─ filename
-│ │││││││  │  │      │         │    └─ last modified date
-│ │││││││  │  │      │         └─ file size (bytes)
-│ │││││││  │  │      └─ group owner
-│ │││││││  │  └─ user owner
-│ │││││││  └─ number of hard links
-│ └──────── permissions (owner / group / others)
-└─ file type (- file, d directory, l symlink)
+^─────────────────────────────────────────────────────────^
+```
+ 
+| Segment | Value | Meaning |
+|---------|-------|---------|
+| `[1]` File type | `-` | `-` file · `d` directory · `l` symlink · `c` char device |
+| `[2]` Permissions | `rwxr-xr--` | owner=`rwx`(7) · group=`r-x`(5) · others=`r--`(4) |
+| `[3]` Hard links | `1` | Number of hard links pointing to this inode |
+| `[4]` Owner | `alice` | User who owns the file (`chown alice file`) |
+| `[5]` Group | `developers` | Owning group (`chgrp developers file`) |
+| `[6]` Size | `4096` | Size in bytes; use `ls -lh` for KB/MB/GB |
+| `[7]` Modified | `Apr 14 10:22` | Last modification time; sort with `ls -lt` |
+| `[8]` Filename | `script.sh` | File name; symlinks show as `link → target` |
 ### Numeric Permission Values
 
 | Value | Permission |
